@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSMS College Student Admission Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="form-container">
+        <h1>Admission Form</h1>
+        <form id="admissionForm">
+            <label for="student-name">Student Name</label>
+            <input type="text" id="student-name" name="student-name" required>
+
+            <label for="stream">Stream</label>
+            <select id="stream" name="stream" required>
+                <option value="Bsc">Bsc</option>
+                <option value="Bcom">Bcom</option>
+                <option value="BA">BA</option>
+            </select>
+
+            <label for="semester">Semester</label>
+            <select id="semester" name="semester" required>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+            </select>
+
+            <label for="caste">Caste</label>
+            <select id="caste" name="caste" required>
+                <option value="SC">SC</option>
+                <option value="General">General</option>
+            </select>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

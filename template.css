@@ -1,0 +1,85 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+    margin: 0;
+}
+
+.invoice-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: auto;
+    font-size: 14px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.header h2 {
+    margin: 5px 0;
+    font-size: 18px;
+}
+
+.invoice-details table,
+.fees-details table,
+.totals table,
+.footer table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.invoice-details td,
+.fees-details td,
+.fees-details th,
+.totals td,
+.footer td {
+    border: 1px solid #000;
+    padding: 8px;
+    text-align: left;
+}
+
+.fees-details th {
+    background-color: #f0f0f0;
+}
+
+.totals td:last-child,
+.fees-details td:last-child {
+    text-align: right;
+}
+
+.footer .bank-details table,
+.footer .declaration table {
+    margin-bottom: 10px;
+}
+
+.footer .bank-details th,
+.footer .declaration th {
+    background-color: #f0f0f0;
+    padding: 8px;
+    border: 1px solid #000;
+}
+
+.footer .bank-details td,
+.footer .declaration td {
+    border: 1px solid #000;
+    padding: 8px;
+}
+
+.footer .computer-generated,
+.footer .copy-type,
+.footer .remitter {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 10px;
+}
