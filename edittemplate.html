@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Invoice Template</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        select, button {
+            margin: 10px 0;
+            padding: 5px;
+        }
+        #templateEditor {
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin-top: 20px;
+            min-height: 400px;
+        }
+        .editable {
+            border: 1px dashed #999;
+            padding: 2px;
+            margin: 2px;
+            min-height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Edit Invoice Template</h1>
+    
+    <select id="streamSelect">
+        <option value="">Select Stream</option>
+        <option value="BA">BA</option>
+        <option value="BSc">BSc</option>
+        <option value="BCom">BCom</option>
+    </select>
+    
+    <select id="semesterSelect">
+        <option value="">Select Semester</option>
+        <option value="1st Semester">1st Semester</option>
+        <option value="2nd Semester">2nd Semester</option>
+        <option value="3rd Semester">3rd Semester</option>
+        <option value="4th Semester">4th Semester</option>
+        <option value="5th Semester">5th Semester</option>
+        <option value="6th Semester">6th Semester</option>
+    </select>
+    
+    <button onclick="loadTemplate()">Load Template</button>
+    <button onclick="saveTemplate()">Save Template</button>
+    <button onclick="clearTemplates()">Clear All Templates</button>
+    
+    <div id="templateEditor"></div>
+
+    <script>
+        function loadTemplate() {
+            const stream = document.getElementById('streamSelect').value;
+            const semester = document.getElementById('semesterSelect').value;
+            
+            if (!stream || !semester) {
+                alert('Please select both stream and semester');
+                return;
+            }
+            
+            const key = `invoiceTemplate_${stream}_${semester}`;
+            let template = localStorage.getItem(key);
+            
+            console.log(`Attempting to load template for ${stream} - ${semester}`);
+            console.log(`Template key: ${key}`);
+            console.log(`Template found in localStorage: ${template ? 'Yes' : 'No'}`);
+            
+            if (!template) {
+                console.log('No custom template found. Loading default template.');
+                fetch('default-template.html')
+                    .then(response => response.text())
+                    .then(data => {
+                        console.log('Default template loaded successfully');
+                        template = data;
+                        renderEditableTemplate(template);
+                    })
+                    .catch(error => {
+                        console.error('Error loading default template:', error);
+                        alert('Error loading default template. Please check the console for more information.');
+                    });
+            } else {
+                console.log('Custom template found. Rendering editable template.');
+                renderEditableTemplate(template);
+            }
+        }
+        
+        function renderEditableTemplate(template) {
+            const editor = document.getElementById('templateEditor');
+            editor.innerHTML = template;
+            
+            const editableElements = editor.querySelectorAll('h1, h2, p, td, th');
+            editableElements.forEach(el => {
+                el.contentEditable = true;
+                el.classList.add('editable');
+            });
+        }
+        
+        function saveTemplate() {
+    const stream = document.getElementById('streamSelect').value;
+    const semester = document.getElementById('semesterSelect').value;
+    
+    if (!stream || !semester) {
+        alert('Please select both stream and semester');
+        return;
+    }
+    
+    const normalizedStream = stream.toUpperCase();
+    const normalizedSemester = semester; // Assuming the select options are already in the correct format
+
+    const template = document.getElementById('templateEditor').innerHTML;
+    const key = `invoiceTemplate_${normalizedStream}_${normalizedSemester}`;
+    
+    localStorage.setItem(key, template);
+    console.log(`Template saved for ${normalizedStream} - ${normalizedSemester}`);
+    console.log(`Template key: ${key}`);
+    alert('Template saved successfully');
+}
+
+        function clearTemplates() {
+            const confirmed = confirm("Are you sure you want to clear all templates? This action cannot be undone.");
+            if (confirmed) {
+                Object.keys(localStorage).forEach(key => {
+                    if (key.startsWith('invoiceTemplate_')) {
+                        localStorage.removeItem(key);
+                    }
+                });
+                document.getElementById('templateEditor').innerHTML = '';
+                console.log('All templates cleared from localStorage');
+                alert('All templates have been cleared');
+            }
+        }
+
+        // Auto-load template when stream and semester are selected
+        document.getElementById('streamSelect').addEventListener('change', autoLoadTemplate);
+        document.getElementById('semesterSelect').addEventListener('change', autoLoadTemplate);
+
+        function autoLoadTemplate() {
+            const stream = document.getElementById('streamSelect').value;
+            const semester = document.getElementById('semesterSelect').value;
+            
+            if (stream && semester) {
+                loadTemplate();
+            }
+        }
+    </script>
+</body>
+</html>

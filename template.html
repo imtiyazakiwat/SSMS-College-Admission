@@ -84,201 +84,59 @@
     
     <div id="print-content"></div>
 
-    <template id="invoice-template">
-        <div class="invoice-container">
-            <div class="header">
-                <h1>K.L.E. Society's</h1>
-                <h2>SHRI SHIVAYOGI MURUGHENDRA SWAMIJI ARTS, SCIENCE AND COMMERCE COLLEGE, ATHANI-591304</h2>
-                <p>GSTIN No : 29AAATK2644N7Z2</p>
-                <p>Phone No : 08289-295300 | Email ID: ssmsatn@gmail.com</p>
-            </div>
-            <div class="invoice-details">
-                <table>
-                    <tr>
-                        <td><strong>Name :</strong> <span class="studentName"></span></td>
-                        <td><strong>Invoice No :</strong> <span class="invoiceNumber"></span></td>
-                    </tr>
-                    <tr>
-                        <td><strong>Class :</strong> <span class="studentClass"></span></td>
-                        <td><strong>Date :</strong> <span class="invoiceDate"></span></td>
-                    </tr>
-                    <tr>
-                        <td><strong>CAST :</strong> <span class="studentCaste"></span></td>
-                        <td><strong>State of Supply :</strong> KARNATAKA</td>
-                    </tr>
-                    <tr>
-                        <td><strong>MOB :</strong> 0</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td colspan="2"><strong>Student Reg No :</strong></td>
-                    </tr>
-                </table>
-            </div>
-            <div class="fees-details">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Sl. No</th>
-                            <th>Particulars</th>
-                            <th>HSN/SAC</th>
-                            <th>Tax Rate</th>
-                            <th>Amount</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>I</td>
-                            <td>Tuition Fees</td>
-                            <td>999241</td>
-                            <td>0%</td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>II</td>
-                            <td>Statutory Fees</td>
-                            <td>999241</td>
-                            <td>0%</td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>III</td>
-                            <td>Curricular Activities Fees</td>
-                            <td>999241</td>
-                            <td>0%</td>
-                            <td>13,180</td>
-                        </tr>
-                        <tr>
-                            <td>IV</td>
-                            <td>Non-Curricular Activities Fee</td>
-                            <td>999299</td>
-                            <td>18%</td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>V</td>
-                            <td>Special Purpose Fees</td>
-                            <td>NA</td>
-                            <td>0%/</td>
-                            <td>405</td>
-                        </tr>
-                        <tr>
-                            <td>VI</td>
-                            <td>Deposits</td>
-                            <td>NA</td>
-                            <td>0%</td>
-                            <td>350</td>
-                        </tr>
-                        <tr>
-                            <td>VII</td>
-                            <td>Others</td>
-                            <td>NA</td>
-                            <td>0%</td>
-                            <td></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="totals">
-                <table>
-                    <tr>
-                        <td><strong>Taxable Value :</strong></td>
-                        <td>13,935</td>
-                    </tr>
-                    <tr>
-                        <td>Output IGST @ 18% :</td>
-                        <td>0</td>
-                    </tr>
-                    <tr>
-                        <td>Output CGST @ 9% :</td>
-                        <td>0</td>
-                    </tr>
-                    <tr>
-                        <td>Output SGST @ 9% :</td>
-                        <td>0</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Total :</strong></td>
-                        <td>13,935</td>
-                    </tr>
-                </table>
-            </div>
-            <div class="footer">
-                <table>
-                    <tr>
-                        <td><strong>Amount Chargeable (In Words):</strong></td>
-                        <td>Thirteen thousand Nine hundred Thirty-five only</td>
-                    </tr>
-                    <tr>
-                        <td><strong>INR</strong></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td><strong>PAN:</strong></td>
-                        <td>AAATK2644N</td>
-                    </tr>
-                    <tr>
-                        <td><strong>GSTIN:</strong></td>
-                        <td>29AAATK2644N7Z2</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Whether GST Payable on RCM:</strong></td>
-                        <td>NO</td>
-                    </tr>
-                </table>
-                <div class="bank-details">
-                    <table>
-                        <tr>
-                            <th colspan="2">Bank Account Details:</th>
-                        </tr>
-                        <tr>
-                            <td>Principal SSMS College Athani</td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>Bank Name:</td>
-                            <td>Union Bank of India</td>
-                        </tr>
-                        <tr>
-                            <td>A/c No:</td>
-                            <td>520101239513173</td>
-                        </tr>
-                        <tr>
-                            <td>Branch Name:</td>
-                            <td>Kolhapur vase Athani</td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="declaration">
-                    <table>
-                        <tr>
-                            <th>Declaration:</th>
-                        </tr>
-                        <tr>
-                            <td>We hereby declare that though our aggregate turnover in any preceding financial year from 2017-18 onwards is more than the aggregate turnover notified under sub-rule(4) of rule 48, we are not required to prepare an invoice in terms of the provisions of the said sub-rule.</td>
-                        </tr>
-                    </table>
-                </div>
-                <p class="computer-generated">This is a Computer Generated Invoice</p>
-                <p class="copy-type"></p>
-                <p class="remitter">REMITTER</p>
-            </div>
-        </div>
-    </template>
-
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const formData = JSON.parse(localStorage.getItem('admissionData'));
             
             if (formData) {
-                displaySingleInvoice();
-                updateInvoiceData(formData);
+                console.log('Admission data found:', formData);
+                loadCustomTemplate(formData.stream, formData.semester);
             } else {
                 console.error('No admission data found in localStorage');
             }
         });
 
-        function updateInvoiceData(formData) {
+        function loadCustomTemplate(stream, semester) {
+    // Normalize the stream and semester to match the saved format
+    const normalizedStream = stream.toUpperCase();
+    const normalizedSemester = getOrdinalSemester(semester);
+    
+    const key = `invoiceTemplate_${normalizedStream}_${normalizedSemester}`;
+    console.log('Attempting to load template with key:', key);
+    const customTemplate = localStorage.getItem(key);
+
+    if (customTemplate) {
+        console.log('Custom template found');
+        document.getElementById('single-invoice').innerHTML = customTemplate;
+        updateInvoiceData();
+    } else {
+        console.log('No custom template found, loading default template');
+        fetch('default-template.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('single-invoice').innerHTML = data;
+                updateInvoiceData();
+            })
+            .catch(error => console.error('Error loading default template:', error));
+    }
+}
+
+function getOrdinalSemester(semester) {
+    const num = parseInt(semester);
+    const suffixes = ['th', 'st', 'nd', 'rd'];
+    const suffix = (num % 100 > 10 && num % 100 < 14) ? 'th' : suffixes[num % 10] || 'th';
+    return `${num}${suffix} Semester`;
+}     
+
+function updateInvoiceData() {
+            const formData = JSON.parse(localStorage.getItem('admissionData'));
+            if (!formData) {
+                console.error('No admission data found for updating invoice');
+                return;
+            }
+
+            console.log('Updating invoice with data:', formData);
+
             function setTextContent(selector, value) {
                 const elements = document.querySelectorAll(selector);
                 elements.forEach(element => {
@@ -291,14 +149,8 @@
             setTextContent('.studentClass', `${formData.semester} Sem ${formData.stream}`);
             setTextContent('.invoiceDate', formData.date);
             setTextContent('.studentCaste', formData.caste);
-        }
 
-        function displaySingleInvoice() {
-            const container = document.getElementById('single-invoice');
-            const template = document.getElementById('invoice-template');
-            const clone = document.importNode(template.content, true);
-            clone.querySelector('.copy-type').textContent = 'ORIGINAL';
-            container.appendChild(clone);
+            console.log('Invoice data updated');
         }
 
         function preparePrint() {
@@ -306,19 +158,18 @@
             container.innerHTML = '';
             container.style.display = 'block';
 
-            const copyTypes = ['STUDENT COPY', 'OFFICE COPY' , 'BANK COPY', 'ACCOUNT COPY'];
-            const template = document.getElementById('invoice-template');
+            const copyTypes = ['STUDENT COPY', 'OFFICE COPY', 'BANK COPY', 'ACCOUNT COPY'];
+            const originalContent = document.getElementById('single-invoice').innerHTML;
 
             copyTypes.forEach(copyType => {
-                const clone = document.importNode(template.content, true);
+                const clone = document.createElement('div');
+                clone.className = 'invoice-container';
+                clone.innerHTML = originalContent;
                 clone.querySelector('.copy-type').textContent = copyType;
                 container.appendChild(clone);
             });
 
-            const formData = JSON.parse(localStorage.getItem('admissionData'));
-            if (formData) {
-                updateInvoiceData(formData);
-            }
+            console.log('Print content prepared');
 
             setTimeout(() => {
                 window.print();
